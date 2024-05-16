@@ -1,9 +1,11 @@
 const productsModel = require ("../models/productsModel");
-const cartModel = require ("../models/cartModel");
+// const cartModel = require ("../models/cartModel");
+const productsRepository = require ("../repositories/productRepository");
 
-async function createProductsService (carsData){
+
+async function createProductsService (productsData){
     try {
-        let result = await productsModel.create(carsData)
+        let result = await productsRepository.create(productsData)
         return result
     } catch (error) {
         throw new Error ("error en el servicio, al crear el producto");

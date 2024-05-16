@@ -2,12 +2,12 @@ const productService = require ("../services/productService.js");
 const Product = require("../schemas/productsSchemas.js");
 
 //datos de los productos.json
-const carsData = require("../data/productos.json");
+const productsData = require("../data/productos.json");
 
 // función para insertar los productos
 async function createProducts (req,res){
   try {
-    const result = await productService.createProductsService(carsData)
+    const result = await productService.createProductsService(productsData)
   console.log(result);
   return res.status(200).json({
     message: "insert exitoso",
